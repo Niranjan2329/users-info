@@ -53,3 +53,7 @@ mongoose.connect(process.env.MONGO_URI)
         await Student.findByIdAndUpdate(id,{name,rollno,course});
         res.redirect("/display");
   })
+
+  app.get('/', (req, res) => {
+    res.render('dashboard');  // Renders views/dashboard.ejs
+});
