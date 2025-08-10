@@ -54,6 +54,6 @@ mongoose.connect(process.env.MONGO_URI)
         res.redirect("/display");
   })
 
-  app.get('/', (req, res) => {
-    res.render('dashboard');  // Renders views/dashboard.ejs
+  app.get("/", (req, res) => {
+    res.render('dashboard');  
 });
