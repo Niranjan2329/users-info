@@ -2,19 +2,74 @@
 <html>
 <head>
     <title>Edit Student</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 30px;
+        }
+        form {
+            max-width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #f39c12;
+            box-shadow: 0px 0px 5px rgba(243,156,18,0.5);
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            background: #f39c12;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #d68910;
+        }
+    </style>
 </head>
 <body>
     <h1>Edit Student</h1>
     <form action="/edit/<%= student._id %>" method="POST">
         <label>Name:</label>
-        <input type="text" name="name" value="<%= student.name %>" required><br>
-        
+        <input type="text" name="name" value="<%= student.name %>" required>
+
         <label>Roll No:</label>
-        <input type="number" name="rollno" value="<%= student.rollno %>" required><br>
-        
+        <input type="number" name="rollno" value="<%= student.rollno %>" required>
+
         <label>Course:</label>
-        <input type="text" name="course" value="<%= student.course %>" required><br>
-        
+        <input type="text" name="course" value="<%= student.course %>" required>
+
         <button type="submit">Update Student</button>
     </form>
 </body>
