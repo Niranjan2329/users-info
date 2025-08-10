@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students List</title>
+</head>
+<body>
+    <h1>All Students in students collection</h1>
+    <a href="/input">Add New Student</a>
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Name</th>
+            <th>Roll No</th>
+            <th>Course</th>
+        </tr>
+        <% students.forEach(student => { %>
+            <tr>
+                <td><%= student.name %></td>
+                <td><%= student.rollno %></td>
+                <td><%= student.course %></td>
+                <td><form action="/delete/<%= student._id%>" method="post" ><button type="submit">Delete</button></form></td>
+                <td><a href="/edit/<%=student._id%>">EDIT</a></td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
